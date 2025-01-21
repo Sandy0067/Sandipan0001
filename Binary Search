@@ -1,0 +1,22 @@
+n=int(input("Enter the number of values you want to enter: "))
+a=[]
+for k in range(n):
+    val=int(input("Enter value:"))
+    a.append(val)
+
+s=int(input("Enter the searching element: "))
+print("The list is: ",a)
+first=0
+last=n-1
+mid=(first+last)//2
+while(first<=last and a[mid]!=s):
+    if(a[mid]<s):
+        first=mid+1
+        mid=(first+last)//2
+    elif(a[mid]>s):
+        last=mid-1
+        mid=(first+last)//2
+if(first>last):
+    print("Searching item not found",s)
+else:
+    print("Searching item found at position:",mid+1)
